@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "net.dapurstudio.konversiapp" 
+    versionCode = "1"
+    version     = "1.0.0" >
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>Konversi</name>
+
+    <icon src="icon-512.png" />
+
+    <description>
+        Aplikasi Konversi panjang,Luas area, Berat, Volume, Kecepatan.
+    </description>
+
+    <author href="https://dapurstudio.net" email="mail@dapurstudio.net">
+        Bara Ramadhan Asdisusilo
+    </author>
+</widget>

@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" href="css/onsenui.css">
     <link rel="stylesheet" href="css/onsen-css-components.min.css">
+    
     <script src="js/onsenui.min.js"></script>
     <script>
         window.fn = {};
@@ -20,6 +21,10 @@
                 .then(menu.close.bind(menu));
         };
     </script>
+    <script src="js/panjang.js"></script>
+    <script src="js/area.js"></script>
+    <script src="js/massa.js"></script>
+    <script src="js/speed.js"></script>
 </head>
 
 <body>
@@ -28,18 +33,21 @@
             <ons-page>
                 <ons-list>
                     <ons-list-item onclick="fn.load('home.html')" tappable>
-                        Home
+                        <ons-icon icon="md-home"> Home</ons-icon>
                     </ons-list-item>
                     <ons-list-item onclick="fn.load('pages/panjang.html')" tappable>
-                        Panjang
+                        <ons-icon icon="md-ruler"> Panjang</ons-icon>
                     </ons-list-item>
                     <ons-list-item onclick="fn.load('pages/area.html')" tappable>
-                        Area
+                        <ons-icon icon="md-square-o"> Area</ons-icon>                        
+                    </ons-list-item>
+                    <ons-list-item onclick="fn.load('pages/massa.html')" tappable>
+                        <ons-icon icon="md-balance"> Massa</ons-icon>
                     </ons-list-item>
                 </ons-list>
             </ons-page>
         </ons-splitter-side>
-        <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+        <ons-splitter-content id="content" page="pages/area.html"></ons-splitter-content>
     </ons-splitter>
 
     <template id="home.html">
@@ -60,22 +68,6 @@
         </ons-page>
     </template>
 
-    
-
-    <template id="area.html">
-        <ons-page>
-            <ons-toolbar>
-                <div class="left">
-                    <ons-toolbar-button onclick="fn.open()">
-                        <ons-icon icon="md-menu"></ons-icon>
-                    </ons-toolbar-button>
-                </div>
-                <div class="center">
-                    About
-                </div>
-            </ons-toolbar>
-        </ons-page>
-    </template>
 </body>
 
 </html>

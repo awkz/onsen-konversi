@@ -1,0 +1,115 @@
+<ons-page>
+        <ons-toolbar>
+            <div class="left">
+                <ons-toolbar-button onclick="fn.open()">
+                    <ons-icon icon="md-menu"></ons-icon>
+                </ons-toolbar-button>
+            </div>
+            <div class="center">
+                Speed
+            </div>
+        </ons-toolbar>
+        <ons-card>
+            <ons-row>
+                <ons-col width="45%">
+                    <ons-input type="number" id="speed1" modifier="underbar" style="width: 100%;display: inline-block;" placeholder="Input Angka" min="0" max="99999999999999999"
+                        float></ons-input>
+    
+                </ons-col>
+                <ons-col width="10%">
+                    <center>=</center>
+                </ons-col>
+                <ons-col width="45%">
+                    <ons-input type="number" id="speed2" modifier="underbar" style="width: 100%;display: inline-block;" placeholder="Hasil" min="0" max="99999999999999999"
+                        float></ons-input>
+                </ons-col>
+            </ons-row>
+            <ons-row>
+                <ons-col width="45%">
+                    <ons-select class="select" modifier="underbar" id="speedkonversi1" style="width:100%" onchange="speedkonversi()"
+                        float>
+                        <!-- m/s, m/min, km/min, km/h, ft/s, kn, Mach, mph -->
+                        <option value="mg">mg - miligram</option>
+                        <option value="g">g - gram</option>
+                        <option value="kg">kg - kilogram</option>
+                        <option value="u">u - Satuan speed Atom</option>
+                        <option value="t">t - Tonne</option>
+                        <option value="oz">oz - ons</option>
+                        <option value="lb">lb - pon</option>
+                        <option value="gr">gr - grains</option>
+                        <option value="ct">ct - karat</option>
+                        <option value="ton">ton - Ton</option>
+                    </ons-select>
+                </ons-col>
+                <ons-col width="10%">
+    
+                </ons-col>
+                <ons-col width="45%">
+                    <ons-select class="select" modifier="underbar" id="speedkonversi2" style="width:100%" onchange="speedkonversi()"
+                        float>
+                        <option value="mg">mg - miligram</option>
+                        <option value="g">g - gram</option>
+                        <option value="kg">kg - kilogram</option>
+                        <option value="u">u - Satuan speed Atom</option>
+                        <option value="t">t - Tonne</option>
+                        <option value="oz">oz - ons</option>
+                        <option value="lb">lb - pon</option>
+                        <option value="gr">gr - grains</option>
+                        <option value="ct">ct - karat</option>
+                        <option value="ton">ton - Ton</option>
+                    </ons-select>
+                </ons-col>
+            </ons-row>
+        </ons-card>
+        <ons-card>
+            <ons-row>
+                <ons-col>
+                    <ons-button style="background-color:red" onclick="speedbersihkan()" modifier="large">Bersihkan</ons-button>
+                </ons-col>
+            </ons-row>
+            <ons-row style="padding-top:10px">
+                <ons-col>
+                    <ons-button modifier="large--quiet" onclick="speedtambahAngka(7)">7</ons-button>
+                </ons-col>
+                <ons-col>
+                    <ons-button modifier="large--quiet" onclick="speedtambahAngka(8)">8</ons-button>
+                </ons-col>
+                <ons-col>
+                    <ons-button modifier="large--quiet" onclick="speedtambahAngka(9)">9</ons-button>
+                </ons-col>
+            </ons-row>
+    
+            <ons-row style="padding-top:10px">
+                <ons-col>
+                    <ons-button modifier="large--quiet" onclick="speedtambahAngka(4)">4</ons-button>
+                </ons-col>
+                <ons-col>
+                    <ons-button modifier="large--quiet" onclick="speedtambahAngka(5)">5</ons-button>
+                </ons-col>
+                <ons-col>
+                    <ons-button modifier="large--quiet" onclick="speedtambahAngka(6)">6</ons-button>
+                </ons-col>
+            </ons-row>
+    
+            <ons-row style="padding-top:10px">
+                <ons-col>
+                    <ons-button modifier="large--quiet" onclick="speedtambahAngka(1)">1</ons-button>
+                </ons-col>
+                <ons-col>
+                    <ons-button modifier="large--quiet" onclick="speedtambahAngka(2)">2</ons-button>
+                </ons-col>
+                <ons-col>
+                    <ons-button modifier="large--quiet" onclick="speedtambahAngka(3)">3</ons-button>
+                </ons-col>
+            </ons-row>
+    
+            <ons-row style="padding-top:10px">
+                <ons-col width="33.33%">
+                    <ons-button modifier="large--quiet" onclick="speedtambahAngka(0)">0</ons-button>
+                </ons-col>
+                <ons-col width="66.66%">
+                    <ons-button modifier="large--quiet" onclick="speedtambahTitik()">.</ons-button>
+                </ons-col>
+            </ons-row>
+        </ons-card>
+    </ons-page>
