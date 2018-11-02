@@ -9,9 +9,6 @@
 
     <name>Konversi</name>
 
-    <icon src="icon-512.png" />
-    <splash src="splash.png" />
-
     <description>
         Aplikasi Konversi panjang,Luas area, Berat, Volume, Kecepatan.
     </description>
@@ -19,4 +16,14 @@
     <author href="https://dapurstudio.net" email="mail@dapurstudio.net">
         Bara Ramadhan Asdisusilo
     </author>
+
+    <preference name="orientation" value="portrait" />
+    <preference name="fullscreen" value="true" />
+    <preference name="KeepRunning" value="false"/>
+    <preference name="SplashScreen" value="screen"/>
+
+    <plugin name="cordova-plugin-splashscreen" />
+    <preference name="SplashScreenDelay" value="5000" />
+    <icon src="icon-512.png" />
+    <splash src="splash.png" />
 </widget>
