@@ -53,8 +53,14 @@
                     <ons-list-item onclick="fn.load('pages/area.html')" tappable>
                         <ons-icon icon="md-square-o"> Area</ons-icon>                        
                     </ons-list-item>
+                    <ons-list-item onclick="fn.load('pages/volume.html')" tappable>
+                        <ons-icon icon="fa-cube"> Volume</ons-icon>                        
+                    </ons-list-item>
                     <ons-list-item onclick="fn.load('pages/massa.html')" tappable>
-                        <ons-icon icon="md-balance"> Massa</ons-icon>
+                        <ons-icon icon="fa-balance-scale"> Massa</ons-icon>
+                    </ons-list-item>
+                    <ons-list-item onclick="fn.load('pages/speed.html')" tappable>
+                        <ons-icon icon="fa-tachometer-alt"> Kecepatan</ons-icon>
                     </ons-list-item>
                     <ons-list-item onclick="exitFromApp()" tappable>
                         <ons-icon icon="md-power"> Keluar</ons-icon>
@@ -62,7 +68,7 @@
                 </ons-list>
             </ons-page>
         </ons-splitter-side>
-        <ons-splitter-content id="content" page="pages/area.html"></ons-splitter-content>
+        <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
     </ons-splitter>
 
     <template id="home.html">
