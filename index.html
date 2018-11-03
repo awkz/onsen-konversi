@@ -4,14 +4,15 @@
 <head>
     <link rel="stylesheet" href="css/onsenui.css">
     <link rel="stylesheet" href="css/onsen-css-components.min.css">
-    
+
     <script src="js/onsenui.min.js"></script>
-    <script src="phonegap.js"></script> 
-        <script type="text/javascript" charset="utf-8">
-        function onLoad(){
+    <script src="phonegap.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        function onLoad() {
             document.addEventListener("deviceready", onDeviceReady, true);
         }
-        function exitFromApp(){
+
+        function exitFromApp() {
             if (confirm("Apakah Yakin Ingin Keluar?")) {
                 navigator.app.exitApp();
             }
@@ -31,30 +32,37 @@
             content.load(page)
                 .then(menu.close.bind(menu));
         };
-        
     </script>
     <script src="js/panjang.js"></script>
     <script src="js/area.js"></script>
     <script src="js/massa.js"></script>
     <script src="js/speed.js"></script>
+    <script src="js/volume.js"></script>
+    <script src="js/kalkulator.js"></script>
 </head>
 
 <body>
     <ons-splitter>
         <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
             <ons-page>
+                <div style="height:150px">
+                    <center>
+                        <img src="icon-512.png" height="70px" style="padding-top: 20px">
+                        <h3>Aplikasi Konversi</h3>
+                    </center>
+                </div>
                 <ons-list>
                     <ons-list-item onclick="fn.load('home.html')" tappable>
-                        <ons-icon icon="md-home"> Home</ons-icon>
+                        <ons-icon icon="fa-calculator"> Kalkulator</ons-icon>
                     </ons-list-item>
                     <ons-list-item onclick="fn.load('pages/panjang.html')" tappable>
-                        <ons-icon icon="md-ruler"> Panjang</ons-icon>
+                        <ons-icon icon="fa-ruler"> Panjang</ons-icon>
                     </ons-list-item>
                     <ons-list-item onclick="fn.load('pages/area.html')" tappable>
-                        <ons-icon icon="md-square-o"> Area</ons-icon>                        
+                        <ons-icon icon="fa-vector-square"> Area</ons-icon>
                     </ons-list-item>
                     <ons-list-item onclick="fn.load('pages/volume.html')" tappable>
-                        <ons-icon icon="fa-cube"> Volume</ons-icon>                        
+                        <ons-icon icon="fa-cube"> Volume</ons-icon>
                     </ons-list-item>
                     <ons-list-item onclick="fn.load('pages/massa.html')" tappable>
                         <ons-icon icon="fa-balance-scale"> Massa</ons-icon>
@@ -62,8 +70,13 @@
                     <ons-list-item onclick="fn.load('pages/speed.html')" tappable>
                         <ons-icon icon="fa-tachometer-alt"> Kecepatan</ons-icon>
                     </ons-list-item>
+                    <hr>
+                    <ons-list-item onclick="fn.load('pages/about.html')" tappable>
+                        <ons-icon icon="fa-question"> About</ons-icon>
+                    </ons-list-item>
+
                     <ons-list-item onclick="exitFromApp()" tappable>
-                        <ons-icon icon="md-power"> Keluar</ons-icon>
+                        <ons-icon icon="fa-power-off"> Keluar</ons-icon>
                     </ons-list-item>
                 </ons-list>
             </ons-page>
@@ -80,12 +93,86 @@
                     </ons-toolbar-button>
                 </div>
                 <div class="center">
-                    Home
+                    Kalkulator
                 </div>
             </ons-toolbar>
-            <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-                Aplikasi Konversi
-            </p>
+            <ons-card>
+                <ons-row>
+                    <ons-col>
+                        <ons-input type="number" id="Display" modifier="underbar" style="width: 100%;display: inline-block;" min="0" max="99999999999999999" readonly float></ons-input>
+                    </ons-col>
+                </ons-row>
+            </ons-card>
+            <ons-card>
+                <ons-row>
+                    <ons-col width="50%" style="padding:5px">
+                        <ons-button style="background-color:red;" onclick="kalbersihkan()" modifier="large">C</ons-button>
+                    </ons-col>
+                    <ons-col width="50%" style="padding:5px">
+                        <ons-button style="background-color:orange;" onclick="kalplusMinus()" modifier="large">+/-</ons-button>
+                    </ons-col>
+                </ons-row>
+
+                <ons-row>
+                    <ons-col width="25%" style="padding:5px">
+                        <ons-button onclick="kaltambahAngka('7')" modifier="large">7</ons-button>
+                    </ons-col>
+                    <ons-col width="25%" style="padding:5px">
+                        <ons-button onclick="kaltambahAngka('8')" modifier="large">8</ons-button>
+                    </ons-col>
+                    <ons-col width="25%" style="padding:5px">
+                        <ons-button onclick="kaltambahAngka('9')" modifier="large">9</ons-button>
+                    </ons-col>
+                    <ons-col width="25%" style="padding:5px">
+                        <ons-button style="background-color:brown;" onclick="kaloperate('+')" modifier="large">+</ons-button>
+                    </ons-col>
+                </ons-row>
+
+                <ons-row>
+                    <ons-col width="25%" style="padding:5px">
+                        <ons-button onclick="kaltambahAngka('4')" modifier="large">4</ons-button>
+                    </ons-col>
+                    <ons-col width="25%" style="padding:5px">
+                        <ons-button onclick="kaltambahAngka('5')" modifier="large">5</ons-button>
+                    </ons-col>
+                    <ons-col width="25%" style="padding:5px">
+                        <ons-button onclick="kaltambahAngka('6')" modifier="large">6</ons-button>
+                    </ons-col>
+                    <ons-col width="25%" style="padding:5px">
+                        <ons-button style="background-color:brown;" onclick="kaloperate('-')" modifier="large">-</ons-button>
+                    </ons-col>
+                </ons-row>
+
+                <ons-row>
+                    <ons-col width="25%" style="padding:5px">
+                        <ons-button onclick="kaltambahAngka('1')" modifier="large">1</ons-button>
+                    </ons-col>
+                    <ons-col width="25%" style="padding:5px">
+                        <ons-button onclick="kaltambahAngka('2')" modifier="large">2</ons-button>
+                    </ons-col>
+                    <ons-col width="25%" style="padding:5px">
+                        <ons-button onclick="kaltambahAngka('3')" modifier="large">3</ons-button>
+                    </ons-col>
+                    <ons-col width="25%" style="padding:5px">
+                        <ons-button style="background-color:brown;" onclick="kaloperate('*')" modifier="large">*</ons-button>
+                    </ons-col>
+                </ons-row>
+
+                <ons-row>
+                    <ons-col width="25%" style="padding:5px">
+                        <ons-button onclick="kaltambahAngka('0')" modifier="large">0</ons-button>
+                    </ons-col>
+                    <ons-col width="25%" style="padding:5px">
+                        <ons-button onclick="kaltambahTitik()" modifier="large">.</ons-button>
+                    </ons-col>
+                    <ons-col width="25%" style="padding:5px">
+                        <ons-button style="background-color:green;" onclick="kalhasil()" modifier="large">=</ons-button>
+                    </ons-col>
+                    <ons-col width="25%" style="padding:5px">
+                        <ons-button style="background-color:brown;" onclick="kaloperate('/')" modifier="large">/</ons-button>
+                    </ons-col>
+                </ons-row>
+            </ons-card>
         </ons-page>
     </template>
 
