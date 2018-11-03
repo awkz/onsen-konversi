@@ -7,10 +7,10 @@
 
     <!-- versionCode is optional and Android only -->
 
-    <name>Konversi</name>
+    <name>Kalkulator & Konversi</name>
 
     <description>
-        Aplikasi Konversi panjang,Luas area, Berat, Volume, Kecepatan.
+        Aplikasi Kalkulator & Konversi panjang,Luas area, Berat, Volume, Kecepatan.
     </description>
 
     <author href="https://dapurstudio.net" email="mail@dapurstudio.net">
